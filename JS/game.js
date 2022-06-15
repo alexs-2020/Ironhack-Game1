@@ -6,9 +6,8 @@ class Game{
         this.floor = []
         this.bird = new Bird()
         this.obstacles = []
-      
-        
     }
+    
     preload(){
         this.backgroundImages= [
             {src: loadImage('flappyback.png'), x: 0, y:0, speed:1 },
@@ -28,7 +27,7 @@ class Game{
         clear()
         this.background.draw()  
         this.bird.draw()
-    
+        this.menu
         if (frameCount % 125 === 0) {
 			this.obstacles.push(new Obstacle(this.pipes[0],this.pipes[1]))
 		}
@@ -38,7 +37,10 @@ class Game{
         //this.obstacles.forEach(obstacle => obstacle.collision(this.bird))
         for(let i = 0; i < this.obstacles.length; i++){
             if(this.obstacles[i].collision(this.bird)){
-                this.obstacles = []
+                // this.obstacles = []
+                MENU = 0;
+                start = false;
+                game = new Game()
             }
         }
        
@@ -48,7 +50,6 @@ class Game{
 			} else {
 				return true
 			}
-		})
-        
-        }
+		})    
+    }
 }

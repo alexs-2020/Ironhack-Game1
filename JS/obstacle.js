@@ -18,14 +18,16 @@ class Obstacle {
 
     collision(playerInfo) {
 		const obstacleX = this.x
-		const obstacleY = this.y 
-		const playerX = playerInfo.x// +playerInfo.width / 2
-		const playerY = playerInfo.y  //+playerInfo.height / 2
+		const obstacleFY = this.heightF
+        const obstacleY= this.y 
+		const playerX = playerInfo.x  +playerInfo.width / 2
+		const playerY = playerInfo.y +playerInfo.height / 2
       
         console.log( dist(playerY,playerX+75,obstacleX,obstacleY))
-        if(dist(playerY,playerX+75,obstacleX,obstacleY) <= 50 || dist(playerY,playerX+75,obstacleX,obstacleY-150) <= 50||  playerY +75 > 740){
+        if(playerY < obstacleFY || playerY >  obstacleY || playerY > 740){
+            if(playerX>obstacleX && playerX <obstacleX+this.width){
 		    console.log('colission')
-		    return true
+		    return true}
 		} else {
             return false
         }

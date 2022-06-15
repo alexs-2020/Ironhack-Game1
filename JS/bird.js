@@ -4,7 +4,7 @@ class Bird {
         this.width = 100;
         this.x =175;
         this.y = 400;
-        this.gravity = 0.2
+        this.gravity = 0.3  
         this.velocity = 0;
     }
     draw(){
@@ -20,6 +20,6 @@ class Bird {
     jump() {
         console.log('jump')
         // this.y -= 30
-        this.velocity = -5
+        this.velocity = -6
     }
 }
