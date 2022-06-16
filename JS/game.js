@@ -6,6 +6,7 @@ class Game{
         this.floor = []
         this.bird = new Bird()
         this.obstacles = []
+        let score = 0;
     }
     
     preload(){

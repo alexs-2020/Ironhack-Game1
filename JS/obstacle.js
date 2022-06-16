@@ -22,17 +22,25 @@ class Obstacle {
         const obstacleY= this.y 
 		const playerX = playerInfo.x  +playerInfo.width / 2
 		const playerY = playerInfo.y +playerInfo.height / 2
-      
-        console.log( dist(playerY,playerX+75,obstacleX,obstacleY))
-        if(playerY < obstacleFY || playerY >  obstacleY || playerY > 740){
-            if(playerX>obstacleX && playerX <obstacleX+this.width){
+        
+        if(playerY + 38 > 740){
+            return true
+        } 
+        if (playerX > obstacleX+this.width&& playerX <obstacleX+this.width+2) {
+			score+=1
+            console.log(score)
+        }
+        if(playerY -30 < obstacleFY || playerY +30> obstacleY ){   
+            if(playerX > obstacleX && playerX < obstacleX+this.width){
 		    console.log('colission')
-		    return true}
-		} else {
+		    return true
+            }   
+            
+        }
+        else {
             return false
         }
     }
-
 }
 
 // || playerY < obstacleY-150 && playerX > obstacleX && playerX < obstacleX+this.width||playerY < obstacleY-150 && playerX+75 >obstacleX && playerX+75< obstacleX+this.width||

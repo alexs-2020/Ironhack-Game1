@@ -1,39 +1,7 @@
-// const game = new Game()
-// // const menu = new Menu()
-
-// // function menu(){
-    
-// // }
-
-
-// function preload(){
-//     game.preload()
-// }
-// function setup(){
-//     createCanvas(1200,800)
-//     background(0,181,226)
-  
-    
-// }
-// function draw(){
-//     game.draw()
-// }
-// //var button = createButton('reset')
-// //button.mousePressed(console.log('weiner'))
-
-
-// function keyPressed(){
-//     // if (keyCode === 13) {
-//     //     console.log('started')
-//     //      game.draw()
-//     // }
-//     if (keyCode === 32) {
-// 		game.bird.jump()
-// 	}
-// }
 let MENU = 0
 let game = new Game()
 let start = false;
+let score = 0;
 
 function preload() {
     
@@ -66,7 +34,11 @@ function draw() {
   textSize(25)
   fill(235, 93, 6); 
   text('SCORE', 555,280);
+  fill(255); 
+  textSize(70)
+  text(score, 580,350)
 }
+//textFont("name")
  
   if (MENU == 1) {
     text('Right Click to return to MENU', 525, 30)
