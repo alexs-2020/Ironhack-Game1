@@ -14,7 +14,9 @@ class Bird {
 			// reset him to the starting position
 			this.y = height - this.height
 		}
+        
         image(game.playerImage, this.x, this.y, this.width, this.height)
+       
       
     }
     jump() {

@@ -26,20 +26,34 @@ class Obstacle {
         if(playerY + 38 > 740){
             return true
         } 
-        if (playerX > obstacleX+this.width&& playerX <obstacleX+this.width+2) {
+        if (playerX > obstacleX+this.width && playerX < obstacleX+this.width+2) {
 			score+=1
             console.log(score)
         }
-        if(playerY -30 < obstacleFY || playerY +30> obstacleY ){   
-            if(playerX > obstacleX && playerX < obstacleX+this.width){
-		    console.log('colission')
-		    return true
-            }   
-            
-        }
-        else {
+        if(playerX+(playerInfo.width/3)>obstacleX&& playerX+(playerInfo.width/2)< obstacleX+this.width){
+            if(playerY -30 < obstacleFY || playerY +16> obstacleY ){   
+                return true
+            }
+        } else {
             return false
         }
+
+        if(playerX-(playerInfo.width/2)> obstacleX&& playerX-(playerInfo.width/2)< obstacleX+this.width){
+            if(playerY-20 < obstacleFY || playerY +30> obstacleY ){   
+                return true
+            }
+        }
+        else{
+            return false
+        }
+        // if(playerY-25 < obstacleFY || playerY +25> obstacleY ){   
+        //     if(playerX > obstacleX && playerX < obstacleX+this.width){
+		//     console.log('colission')
+		//     return true
+        //     }   
+            
+        // }
+       
     }
 }
 
