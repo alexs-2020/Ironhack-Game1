@@ -23,17 +23,14 @@ class Game{
           //{src: loadImage('clouds4.jpg'), x: 1200, y:0, speed:3}
         ]
         this.playerImage = loadImage('cow.gif')
-       
         this.pipes = [
            loadImage('pipe.png'), loadImage('pipeF.png') 
         ]
     }
     draw(){
         clear()
-       
         this.background.draw()  
         this.bird.draw()
-         
         if (frameCount % 125 === 0) {
 			this.obstacles.push(new Obstacle(this.pipes[0],this.pipes[1]))
 		}

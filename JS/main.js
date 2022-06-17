@@ -38,13 +38,8 @@ function draw() {
     }
 //textFont("name")
  
+  // START GAME
   if (MENU == 1) {
-    text('Right Click to return to MENU', 525, 30)
-    if (mouseButton == RIGHT) {
-      MENU = 0
-    }
-  } // START GAME
-  if (MENU == 2) {
     game.preload()
     start = true
     console.log(start)
@@ -53,10 +48,7 @@ function draw() {
     if (mouseButton == RIGHT) {
       MENU = 0
     }
-  } // INSTRUCTIONS
-  if (MENU == 3) {
-    text('COME AGAIN SOON!', 25, height / 2)
-  } // EXIT 
+  } 
   if (start){
     game.draw()
    }
@@ -64,22 +56,13 @@ function draw() {
 
 function mouseClicked() {
   if (MENU == 0) {
-    if (mouseY > 460 && mouseY <500) {
-        if (mouseX >485 && mouseX <715) {
-            MENU = 3;
-        }
-    }
     if (mouseY > 400 && mouseY < 440) {
         if (mouseX < 585 && mouseX > 485) {
-          MENU = 2
-       
+          MENU = 1
         }
-        if (mouseX < 715 && mouseX > 615) {
-            MENU = 1
-        }      
-    }
     }
   }
+}
 
 function keyPressed(){
     if (keyCode === 32) {
