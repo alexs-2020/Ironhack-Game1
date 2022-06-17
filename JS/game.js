@@ -7,9 +7,11 @@ class Game{
         this.bird = new Bird()
         this.obstacles = []
         this.menu = true
+        this.sound = new Audio("cowMoo.mp3")
     }
     
     preload(){
+        this.sound.play()
         this.backgroundImages= [
             {src: loadImage('flappyback.png'), x: 0, y:0, speed:1 },
         ]
@@ -28,7 +30,7 @@ class Game{
     }
     draw(){
         clear()
-      
+       
         this.background.draw()  
         this.bird.draw()
          
